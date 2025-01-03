@@ -15,7 +15,7 @@ class Game extends React.Component{
   constructor(props) {
     super(props);
 
-    var trial_per_block = 100;
+    var trial_per_block = 50; // TODO: revert to 50 we want a trial that is half the length - 30 minutes total
 
     /* fill in random colors .*/
     var BlockNb = 4;

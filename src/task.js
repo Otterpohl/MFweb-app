@@ -25,7 +25,7 @@ class Task extends React.Component{
     this.state = {
       UserNo:[], //default
       user_info: user_info,
-      num_training:10, // should be 10
+      num_training: 5, // should be 10 - the number of test cases to present before starting the game
       loading: 1,
       slide: 1, // should be 1
       transition: 0, // starts at 0; 7 to access directly questionnaires
@@ -114,10 +114,9 @@ class Task extends React.Component{
                   <div className="place-middle">
                     <div className="IntroConsentText">
                       <br/> <br/> <br/> <br/>
-                      <p><span className="bold">STUDY PART 1/2</span></p>
+                      <p><span className="bold">STUDY</span></p>
                         Thank you for joining our study. <br/>
-                        In the 1st part of the study you will play a computer game. <br/>
-                        In the 2nd part you will be asked a few questions about yourself.<br/>
+                        In this study you will play a computer game. <br/>
                         Press the button when you are ready.
                       <br/><br/>
                       <div className="container">
@@ -158,11 +157,12 @@ class Task extends React.Component{
             return <Game user_info={this.state.user_info} UserNo={this.state.UserNo} nextTransition={this.nextTransition}/>
 
           case 7:
-            //console.log("task: transition 7")
-            this.props.history.push({
-              pathname: `/Questionnaires`,
-              state: {user_info: this.state.user_info, UserNo: this.state.UserNo}
-            })
+            // we dont want to present the questionnaire 
+            // console.log("task: transition 7")
+            // this.props.history.push({
+            //   pathname: `/Questionnaires`,
+            //   state: {user_info: this.state.user_info, UserNo: this.state.UserNo}
+            // })
             return null
 
           default:

@@ -35,7 +35,7 @@ class Consent extends Component {
 
     this.state = {
       prolific_id: prolific_id,
-      ConsentCompleted: 0,
+      ConsentCompleted: 1, // simulate that the eula has been accepted, this will skip the page entirely
       date: dateString,
       startTime: timeString,
       task_no: task_no,
