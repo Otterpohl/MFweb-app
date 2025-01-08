@@ -176,13 +176,38 @@ class Task extends React.Component{
             return <Game user_info={this.state.user_info} UserNo={this.state.UserNo} nextTransition={this.nextTransition}/>
 
           case 7:
+            const handleRedirect = () => {
+              window.location.href = "https://mf-lloyd.co.uk";  // Redirects the user to an external site
+            };
+
+            // Inline styles for centering
+            const containerStyle = {
+              display: 'flex',
+              justifyContent: 'center', // Horizontally centers the button
+              alignItems: 'center',     // Vertically centers the button
+              height: '100vh',          // Full height of the viewport
+              margin: 0,               // Remove default margin
+            };
+
+            const buttonStyle = {
+              padding: '10px 20px',
+              fontSize: '16px',
+            };
+
+            return (
+              <div style={containerStyle}>
+                <Button onClick={handleRedirect} style={buttonStyle} variant="outline-success" size="lg">
+                  Next Site
+                </Button>
+              </div>
+            );
             // we dont want to present the questionnaire 
             // console.log("task: transition 7")
             // this.props.history.push({
             //   pathname: `/Questionnaires`,
             //   state: {user_info: this.state.user_info, UserNo: this.state.UserNo}
             // })
-            return null
+            // return null
 
           default:
       }
