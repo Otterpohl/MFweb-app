@@ -93,6 +93,20 @@ class Task extends React.Component{
     );
   }
 
+  updateInputValue(e) {
+    const val = e.target.value;
+    this.setState(prevState => ({
+      user_info: {
+        ...prevState.user_info,
+        prolific_id: val
+      }
+    }));
+  }
+
+  isDisabled() {
+    return this.state.user_info.prolific_id === "";
+  }
+
   render(){
 
       this.listenner(this.state.transition);
@@ -109,6 +123,9 @@ class Task extends React.Component{
       switch(this.state.transition) {
 
           case 0:
+              const isDisabled = this.isDisabled();
+              const buttonVariant = isDisabled ? "outline-secondary" : "outline-success";
+
               return(
                 <div>
                   <div className="place-middle">
@@ -117,11 +134,13 @@ class Task extends React.Component{
                       <p><span className="bold">STUDY</span></p>
                         Thank you for joining our study. <br/>
                         In this study you will play a computer game. <br/>
-                        Press the button when you are ready.
-                      <br/><br/>
+                        Enter the ID provided to you and press the button when you are ready.
+                      <br/> <br/>
+                      <label >Your ID: </label>
+                      <input value={this.state.user_info.prolific_id || ""} onChange={e => this.updateInputValue(e)}/>
                       <div className="container">
                           <div className="center">
-                            <Button variant="outline-success" size="lg" onClick={this.handleClick}> Let&#39;s start playing ! </Button>
+                            <Button disabled={isDisabled} variant={buttonVariant} size="lg" onClick={this.handleClick}> Let&#39;s start playing! </Button>
                           </div>
                       </div>
                     </div>

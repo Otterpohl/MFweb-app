@@ -17,11 +17,11 @@ class Consent extends Component {
     super(props);
 
     //console.log(this.props.location)
-    let url    = this.props.location.search;
+    // let url    = this.props.location.search;
     //console.log("url", url)
-    let params = queryString.parse(url);
+    // let params = queryString.parse(url);
     //console.log("params", params)
-    const prolific_id = (params['PROLIFIC_PID']=== undefined ? 'undefined' : params['PROLIFIC_PID'])
+    const prolific_id = "" // we wont allow setting it as a param anymore
     //console.log("prolific_id", prolific_id)
     const task_no = Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100;
     const training_no = Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100;
