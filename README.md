@@ -1,3 +1,6 @@
+export NODE_OPTIONS=--openssl-legacy-provider
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/nix/store/pw4srczkmg4511vgfiinq50gb46fnlgk-ld-library-path/share/nix-ld/lib/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

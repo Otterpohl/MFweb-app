@@ -25,7 +25,7 @@ class Task extends React.Component{
     this.state = {
       UserNo:[], //default
       user_info: user_info,
-      num_training: 5, // should be 10 - the number of test cases to present before starting the game
+      num_training: 5, // the number of test cases to present before starting the game
       loading: 1,
       slide: 1, // should be 1
       transition: 0, // starts at 0; 7 to access directly questionnaires
