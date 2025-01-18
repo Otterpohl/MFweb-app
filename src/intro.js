@@ -17,12 +17,13 @@ class Consent extends Component {
     super(props);
 
     //console.log(this.props.location)
-    // let url    = this.props.location.search;
+    let url    = this.props.location.search;
     //console.log("url", url)
-    // let params = queryString.parse(url);
+    let params = queryString.parse(url);
     //console.log("params", params)
     const prolific_id = "" // we wont allow setting it as a param anymore
     //console.log("prolific_id", prolific_id)
+    const redirect_choice = (params['redirect']=== undefined ? '1' : params['redirect'])
     const task_no = Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100;
     const training_no = Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100;
 
@@ -40,6 +41,7 @@ class Consent extends Component {
       startTime: timeString,
       task_no: task_no,
       training_no: training_no,
+      redirect_choice: redirect_choice,
 
       images_fb:["http://www.brainexplorer.net/MF/images_training/thumbs_up.png", "http://www.brainexplorer.net/MF/images_training/thumbs_down.png"],
 

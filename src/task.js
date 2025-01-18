@@ -176,8 +176,14 @@ class Task extends React.Component{
             return <Game user_info={this.state.user_info} UserNo={this.state.UserNo} nextTransition={this.nextTransition}/>
 
           case 7:
+            if (this.state.user_info.redirect_choice === "1") {
+              var url = "https://research.sc/participant/login/dynamic/BCBB0A7A-C40B-48FD-AC78-0F14FBF8CA52"
+            } else {
+              var url = "https://research.sc/participant/login/dynamic/811F61BA-3D8F-4E05-A390-3C30CAE7AD40"
+            }
+
             const handleRedirect = () => {
-              window.location.href = "https://mf-lloyd.co.uk";  // Redirects the user to an external site
+              window.location.href = url;  // Redirects the user to an external site
             };
 
             // Inline styles for centering
